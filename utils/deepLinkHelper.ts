@@ -2,6 +2,7 @@
 import { UAParser } from "ua-parser-js";
 import { DeviceInfo } from "../hooks/useDevice";
 import { HashParams } from "../hooks/useHash";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export const PageOpenedByUserAction = (userClicked: boolean, hashParams: HashParams) => {
   return userClicked || hashParams?.initiated === "true";
@@ -107,3 +108,4 @@ export const CreateReturnUrl = (device: DeviceInfo, isNull: boolean) => {
   // we let users with other conditions than those above return themselves from bankid
   return encodeURIComponent(`${window.location.href}#initiated=true`);
 };
+

@@ -1,4 +1,3 @@
-// components/DeepLinkButton.tsx
 "use client"; // Mark this as a Client Component
 
 import { createLink } from "../utils/deepLinkHelper";
@@ -20,19 +19,34 @@ export default function DeepLinkButton() {
   };
 
   return (
-    <button
-      style={{
-        padding: "10px 20px",
-        fontSize: "16px",
-        backgroundColor: "#0070f3",
-        color: "white",
-        border: "none",
-        borderRadius: "5px",
-        cursor: "pointer",
-      }}
-      onClick={handleClick}
-    >
-      Open Mobile App
-    </button>
+    <div>
+      {/* Display "VERSION 1" as a separate element */}
+      <div
+        style={{
+          fontSize: "14px",
+          color: "#666",
+          marginBottom: "10px",
+          textAlign: "center",
+        }}
+      >
+        VERSION 1
+      </div>
+
+      {/* Button to open the mobile app */}
+      <button
+        style={{
+          padding: "10px 20px",
+          fontSize: "16px",
+          backgroundColor: "#0070f3",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+        onClick={handleClick}
+      >
+        Open Mobile App
+      </button>
+    </div>
   );
 }
