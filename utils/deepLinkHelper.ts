@@ -38,12 +38,12 @@ function getDefaultAndroidRedirect(token: string, location: string, res: UAParse
   } else if (res.browser.name === "Chrome") {
     return encodeURIComponent("googlechrome://");
   } else {
-    return `https://app.checkbroswerbehaviour.com/?autostarttoken=${token}&redirect=${location}#anchor`;
+    return `checkbroswerbehaviour:///?autostarttoken=${token}&redirect=${location}#anchor`;
   }
 }
 
 function getMobileRedirect(token: string, location: string) {
-  return `https://app.checkbroswerbehaviour.com/?autostarttoken=${token}&redirect=${location}#anchor`;
+  return `checkbroswerbehaviour:///?autostarttoken=${token}&redirect=${location}#anchor`;
 }
 
 export function shallSelectDeviceAutomatically(userAgent: string) {
