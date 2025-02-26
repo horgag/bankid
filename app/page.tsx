@@ -1,4 +1,3 @@
-// app/page.tsx
 import DeepLinkButton from "../components/DeepLinkButton";
 
 export default function Home() {

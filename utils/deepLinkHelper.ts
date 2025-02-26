@@ -28,7 +28,7 @@ export function createLink(userAgent: string, token: string, location: string) {
 }
 
 function getDefaultRedirect(token: string) {
-  return `bankid:///?autostarttoken=${token}&redirect=null`;
+  return `myapp:///?autostarttoken=${token}&redirect=null`;
 }
 
 function getDefaultAndroidRedirect(token: string, location: string, res: UAParser.IResult) {
@@ -38,12 +38,12 @@ function getDefaultAndroidRedirect(token: string, location: string, res: UAParse
   } else if (res.browser.name === "Chrome") {
     return encodeURIComponent("googlechrome://");
   } else {
-    return `https://app.bankid.com/?autostarttoken=${token}&redirect=${location}#anchor`;
+    return `https://app.myapp.com/?autostarttoken=${token}&redirect=${location}#anchor`;
   }
 }
 
 function getMobileRedirect(token: string, location: string) {
-  return `https://app.bankid.com/?autostarttoken=${token}&redirect=${location}#anchor`;
+  return `https://app.myapp.com/?autostarttoken=${token}&redirect=${location}#anchor`;
 }
 
 export function shallSelectDeviceAutomatically(userAgent: string) {

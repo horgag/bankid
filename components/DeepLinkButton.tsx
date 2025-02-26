@@ -4,11 +4,8 @@ import { createLink } from "../utils/deepLinkHelper";
 
 export default function DeepLinkButton() {
   const handleClick = () => {
-    // Get the user agent from the browser
     const userAgent = navigator.userAgent;
-
-    // Example token and location (replace with actual values)
-    const token = "your-autostart-token";
+    const token = "your-autostart-token"; // Replace with actual token
     const location = window.location.href;
 
     // Generate the deep link URL
@@ -20,7 +17,6 @@ export default function DeepLinkButton() {
 
   return (
     <div>
-      {/* Display "VERSION 1" as a separate element */}
       <div
         style={{
           fontSize: "14px",
@@ -32,7 +28,6 @@ export default function DeepLinkButton() {
         VERSION 1
       </div>
 
-      {/* Button to open the mobile app */}
       <button
         style={{
           padding: "10px 20px",
