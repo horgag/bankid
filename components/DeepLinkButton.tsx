@@ -3,6 +3,8 @@
 import { createLink } from "../utils/deepLinkHelper";
 
 export default function DeepLinkButton() {
+  const appleChrome = localStorage.getItem("AppleChrome") || ""; // Ensure it's never null
+
   const handleClick = () => {
     const userAgent = navigator.userAgent;
     const token = "your-autostart-token"; // Replace with actual token
@@ -25,8 +27,11 @@ export default function DeepLinkButton() {
           textAlign: "center",
         }}
       >
-        VERSION 1
+        VERSION 2
       </div>
+
+      {/* Only render if appleChrome is not empty */}
+      {appleChrome && <div>{appleChrome}</div>}
 
       <button
         style={{

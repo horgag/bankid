@@ -17,6 +17,7 @@ export function createLink(userAgent: string, token: string, location: string) {
         return getMobileRedirect(token, location);
       }
       if (ua.browser.name === "Chrome") {
+        localStorage.setItem('AppleChrome',ua.browser.name);
         return getIphoneRedirect(token, location, ua.browser.name);
       }
       // Unsupported browser on iphone
@@ -85,7 +86,7 @@ function getIphoneRedirect(token: string, location: string, browser: string) {
 
 function getIphoneAppLink(browser: string) {
   if (browser === "Chrome") {
-    return "googlechromes://";
+    return "googlechrome://";
   }
   return "missing";
 }
